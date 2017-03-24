@@ -16,7 +16,8 @@
 				$exec_array = explode(' ', $exec_string[0]);
 				$return_array = array();
 				foreach ($exec_array as $value) {
-					$return_array[] = explode('=', $value);
+					 $tmp = explode('=', $value);
+					 $return_array[$tmp[0]] = $tmp[1];
 				}
 				return $return_array;
 			} catch (Exception $e) {
