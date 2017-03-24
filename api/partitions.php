@@ -15,7 +15,7 @@
 			return execute_command('scontrol --oneliner show partition '.$this->name);
 		}
 
-		public function jsonSerialize() {
+		function jsonSerialize() {
 			return json_encode($this->$values);
 		}
 
