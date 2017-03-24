@@ -22,7 +22,7 @@
 		static public function list_partitions() {
 			try{
 				$sinfo = execute_command('sinfo --noheader --format=%R') or die('Failure');
-				echo $sinfo;
+				return $sinfo;
 			} catch (Exception $e) {
 				echo 'Exception: '.$e->getMessage();
 			}
