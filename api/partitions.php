@@ -14,7 +14,14 @@
 
 		function get_values() {
 			try {
-				return execute_command('scontrol --oneliner show partition '.$this->name);
+				$exec_string = execute_command('scontrol --oneliner show partition '.$this->name);
+				$exec_array = explode(' ', $exec_string);
+				$return_array = array();
+				foreach ($exec_array as $value) {
+					$return_array[] = explode('=', $value);
+				}
+				var_dump($return_array);
+				return $return_array;
 			} catch (Exception $e) {
 				echo 'Exception: '.$e->getMessage();
 			}
