@@ -9,7 +9,7 @@
 			$this->name = $name;
 			$this->values = $this->get_values();
 			var_dump($this->get_values());
-			var_dump($this->$values);
+			var_dump($this->values);
 		}
 
 		function get_values() {
@@ -27,8 +27,8 @@
 		}
 
 		function jsonSerialize() {
-			var_dump($this->$values);
-			return json_encode($this->$values);
+			var_dump($this->values);
+			return json_encode($this->values);
 		}
 
 		static public function list_partitions() {
