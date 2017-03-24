@@ -20,8 +20,12 @@
 		}
 
 		static public function list_partitions() {
-			$sinfo = execute_command('sinfo --noheader --format=%R') or die('Failure');
-			echo $sinfo;
+			try{
+				$sinfo = execute_command('sinfo --noheader --format=%R') or die('Failure');
+				echo $sinfo;
+			} catch (Exception $e) {
+				echo 'Exception: '.$e->getMessage();
+			}
 		}
 	}
 ?>
