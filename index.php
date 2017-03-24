@@ -3,6 +3,9 @@
 // Kickstart the framework
 $f3=require('lib/base.php');
 
+// init.php
+require_once('api/init.php');
+
 function execute_command($CMD) {
 	$tmp = exec(escapeshellcmd($CMD), $out, $ret);
 	if ($ret == 0) {
