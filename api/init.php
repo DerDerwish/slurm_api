@@ -1,5 +1,5 @@
 <?php
-	static function execute_command($CMD, ...$params) {
+	function execute_command($CMD, ...$params) {
 		if (isset($params)) {
 			foreach ($params as $key => $value) {
 				$params[$key] = escapeshellarg($value);

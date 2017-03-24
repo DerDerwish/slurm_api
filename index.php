@@ -6,14 +6,14 @@ $f3=require('lib/base.php');
 // init.php
 require_once('api/init.php');
 
-function execute_command($CMD) {
+/*function execute_command($CMD) {
 	$tmp = exec(escapeshellcmd($CMD), $out, $ret);
 	if ($ret == 0) {
 		return $out;
 	} else {
 		return false;
 	}
-}
+}*/
 
 $f3->set('DEBUG',1);
 if ((float)PCRE_VERSION<7.9)
