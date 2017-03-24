@@ -9,6 +9,7 @@
 			$this->name = $name;
 			$this->values = $this->get_values();
 			var_dump($this->get_values());
+			var_dump($this->$values);
 		}
 
 		function get_values() {
