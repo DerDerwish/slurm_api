@@ -20,6 +20,7 @@
 		}
 
 		function jsonSerialize() {
+			var_dump($this->$values);
 			return json_encode($this->$values);
 		}
 
