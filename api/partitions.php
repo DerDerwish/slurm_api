@@ -12,7 +12,11 @@
 		}
 
 		function get_values() {
-			return execute_command('scontrol --oneliner show partition '.$this->name);
+			try {
+				return execute_command('scontrol --oneliner show partition '.$this->name);
+			} catch (Exception $e) {
+				echo 'Exception: '.$e->getMessage();
+			}
 		}
 
 		function jsonSerialize() {
