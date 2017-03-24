@@ -15,7 +15,7 @@
 		function get_values() {
 			try {
 				$exec_string = execute_command('scontrol --oneliner show partition '.$this->name);
-				$exec_array = explode(' ', $exec_string);
+				$exec_array = explode(' ', $exec_string[0]);
 				$return_array = array();
 				foreach ($exec_array as $value) {
 					$return_array[] = explode('=', $value);
