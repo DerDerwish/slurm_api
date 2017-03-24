@@ -1,7 +1,7 @@
 <?php
 	class Partition implements JsonSerializable {
-		private name = null;
-		private values = null;
+		private $name = "";
+		private $values = null;
 
 		function __construct($name) {
 			if (!is_string($name)) { throw new Exception("Not a String"); }
