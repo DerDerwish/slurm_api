@@ -5,7 +5,7 @@
 
 		function __construct($name) {
 			if (!is_string($name)) { throw new Exception("Not a String"); }
-			if (!in_array($name, list_partitions())) { throw new Exception("Nost an existing partition!"); }
+			if (!in_array($name, $this->list_partitions())) { throw new Exception("Nost an existing partition!"); }
 			$this->name = $name;
 			$this->values = array();
 			$this->values = $this->get_values();
@@ -19,7 +19,7 @@
 			return json_encode($this->$values);
 		}
 
-		static function list_partitions() {
+		static public function list_partitions() {
 			$sinfo = execute_command('sinfo --noheader --format=%R') or die('Failure');
 			echo $sinfo;
 		}
