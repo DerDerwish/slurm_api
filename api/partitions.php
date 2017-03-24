@@ -1,6 +1,6 @@
 <?php
   static function list_partitions() {
-		$sinfo = hexecute_command('sinfo --noheader --format=%R') or die('Failure');
+		$sinfo = execute_command('sinfo --noheader --format=%R') or die('Failure');
 		echo $sinfo;
 	}
 
