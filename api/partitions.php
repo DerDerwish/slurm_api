@@ -1,9 +1,4 @@
 <?php
-  static function list_partitions() {
-		$sinfo = execute_command('sinfo --noheader --format=%R') or die('Failure');
-		echo $sinfo;
-	}
-
 	class Partition implements JsonSerializable {
 		private name = "";
 		private values = null;
@@ -24,5 +19,9 @@
 			return json_encode($this->$values);
 		}
 
+		static function list_partitions() {
+			$sinfo = execute_command('sinfo --noheader --format=%R') or die('Failure');
+			echo $sinfo;
+		}
 	}
 ?>
