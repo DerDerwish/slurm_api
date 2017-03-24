@@ -34,7 +34,7 @@ $f3->route('GET /partitions', function() {
 // TODO
 $f3->route('GET /partition/@partition_name', function($f3, $params) {
 	$partition = new Partition($params['partition_name']);
-	echo $partition.jsonSerialize();
+	echo $partition->jsonSerialize();
 });
 
 $f3->run();
