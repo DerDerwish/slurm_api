@@ -33,7 +33,8 @@ $f3->route('GET /partitions', function() {
 // Configuration of a given partition
 // TODO
 $f3->route('GET /partition/@partition_name', function() {
-	echo new Partition($params['partition_name']).jsonSerialize();
+	$partition = new Partition($params['partition_name']);
+	echo $partition.jsonSerialize();
 });
 
 $f3->run();
