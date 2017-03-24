@@ -1,6 +1,6 @@
 <?php
 	class Partition implements JsonSerializable {
-		private name = "";
+		private name = null;
 		private values = null;
 
 		function __construct($name) {
