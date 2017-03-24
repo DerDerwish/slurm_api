@@ -5,7 +5,7 @@
 
 		function __construct($name) {
 			if (!is_string($name)) { throw new Exception("Not a String"); }
-			if (!in_array($name, $this->list_partitions())) { throw new Exception("Nost an existing partition!"); }
+			if (!in_array($name, $this->list_partitions())) { throw new Exception("Not an existing partition!"); }
 			$this->name = $name;
 			$this->values = $this->get_values();
 		}
