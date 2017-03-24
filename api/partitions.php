@@ -20,7 +20,6 @@
 				foreach ($exec_array as $value) {
 					$return_array[] = explode('=', $value);
 				}
-				var_dump($return_array);
 				return $return_array;
 			} catch (Exception $e) {
 				echo 'Exception: '.$e->getMessage();
