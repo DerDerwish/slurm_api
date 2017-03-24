@@ -30,11 +30,7 @@ $f3->route('GET /partitions', function() {
 // Configuration of a given partition
 // TODO
 $f3->route('GET /partition/@partition_name', function() {
-	//'scontrol --oneliner show partition '.$partition_name)
-	$out = execute_command('sinfo --noheader --format=%R');
-	if ($out) {
-		echo json_encode($out);
-	}
+	echo new Partition($params['partition_name']).jsonSerialize();
 });
 
 $f3->run();
